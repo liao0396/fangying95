@@ -13,4 +13,38 @@ h1{margin:.2em 0;font-size:44px;line-height:1.15}.hero p{font-size:18px;line-hei
 .section{padding:40px 0}.section h2{margin:0 0 10px 0}.muted{color:var(--sub)}.footer{padding:28px 0;color:#6b7280}
 .hero-img{border-radius:24px;border:8px solid #fff;box-shadow:0 12px 30px rgba(0,0,0,.12)}
 .notice{background:#0ea5e9;color:#fff;border:0}.notice p{margin:0;font-weight:600}
-@media (max-width:900px){.hero{grid-template-columns:1fr;gap:18px}h1{font-size:34px}.points{grid-template-columns:1fr}}
+
+/* --- 以下為新增的樣式 --- */
+
+/* 建議 1a: 據點分區標題 */
+.region-title{margin:32px 0 12px 0;padding-bottom:8px;border-bottom:1px solid #f1e6df;color:var(--brand);font-size:18px}
+
+/* 建議 1b: 可點擊的地圖連結 */
+.muted a{color:inherit;text-decoration:none;transition:color .2s}
+.muted a:hover{color:var(--ink);text-decoration:underline}
+
+/* 建議 4: 手機版漢堡選單按鈕 */
+.nav-menu{display:flex;gap:16px}
+.nav-menu a{padding:8px;text-decoration:none;font-weight:500;color:var(--ink);border-radius:8px;transition:background .2s}
+.nav-menu a:hover{background:#f1e6df}
+.nav-toggle{display:none;background:transparent;border:0;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;margin:5px 0;transition:all .3s}
+
+/* RWD 樣式 */
+@media (max-width:900px){
+.hero{grid-template-columns:1fr;gap:18px}
+h1{font-size:34px}
+.points{grid-template-columns:1fr}
+
+/* 建議 4: 手機版選單 RWD */
+.nav-menu{position:fixed;top:65px;left:0;right:0;background:rgba(255,248,244,.98);flex-direction:column;padding:10px 20px 20px 20px;text-align:center;border-bottom:1px solid #f1e6df;
+/* 預設隱藏 */
+opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s}
+.nav-menu.is-active{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-menu a{font-size:18px;padding:12px}
+.nav-toggle{display:block;z-index:30}
+/* 漢堡選單 "X" 動畫 */
+.nav-toggle.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.is-active span:nth-child(2){opacity:0}
+.nav-toggle.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
