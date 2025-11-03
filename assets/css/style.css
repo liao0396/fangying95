@@ -30,6 +30,14 @@ h1{margin:.2em 0;font-size:44px;line-height:1.15}.hero p{font-size:18px;line-hei
 .nav-toggle{display:none;background:transparent;border:0;cursor:pointer;padding:4px}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;margin:5px 0;transition:all .3s}
 
+/* === 新增的醒目提示樣式 === */
+.text-highlight {
+  color: var(--brand); /* 套用品牌紅色 */
+  font-weight: 600; /* 稍微加粗 */
+}
+/* === 新增樣式結束 === */
+
+
 /* RWD 樣式 */
 @media (max-width:900px){
 .hero{grid-template-columns:1fr;gap:18px}
